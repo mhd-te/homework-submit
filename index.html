@@ -110,10 +110,16 @@
       flex: 2;
       font-size: 18px;
       font-weight: 600;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
     }
 
     .btn-pink:active {
       background-color: #db2777;
+      transform: scale(0.98);
     }
 
     /* Custom Small Black 'Yes' Button */
@@ -124,10 +130,15 @@
       padding: 10px 12px;
       font-size: 13px;
       opacity: 0.85;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.1s;
     }
 
     .btn-black-small:active {
       background-color: #1e293b;
+      transform: scale(0.98);
     }
 
     .result-text {
@@ -204,12 +215,12 @@
       <h1 id="greetingTitle">منورة</h1>
       <p>عندي سؤال</p>
       <p style="color: #1e293b; font-weight: 500; margin-bottom: 20px;">
-        Do you want me to stop texting you? do you feel distubed when i text you?
+        Do you feel disturbed when i text you?
       </p>
       
       <div id="choiceButtons" class="btn-group">
-        <button class="btn btn-pink" onclick="handleChoice('no')">No</button>
-        <button class="btn btn-black-small" onclick="handleChoice('yes')">Yes</button>
+        <button class="btn-pink" onclick="handleChoice('no')">No</button>
+        <button class="btn-black-small" onclick="handleChoice('yes')">Yes</button>
       </div>
 
       <div id="resultArea" style="display: none;">
@@ -262,7 +273,7 @@
       resultArea.style.display = 'block';
 
       if (answer === 'yes') {
-        resultText.innerText = "ححاول ما اكتبلك لكن، بس مو اكيد";
+        resultText.innerText = "ححاول ما اكتبلك، بس مو اكيد";
       } else {
         resultText.innerText = "الحمدلله، اسعدتيني والله 🌷";
       }
