@@ -166,10 +166,15 @@
 </head>
 <body>
 
+  <!-- Optional Background Audio Element -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-a-very-happy-gospel-116.mp3" type="audio/mpeg" />
+  </audio>
+
   <div class="card" id="mainCard">
     <!-- SCREEN 1 -->
     <div id="screen1" class="screen active">
-      <h1>Hello 👋</h1>
+      <h1>اهلين 👋</h1>
       <p>شو اسمك؟</p>
       <input type="text" id="nameInput" placeholder="كتبيه هون شطورة" autocomplete="off" />
       <button class="btn" onclick="goToScreen2()">Continue</button>
@@ -177,10 +182,10 @@
 
     <!-- SCREEN 2 -->
     <div id="screen2" class="screen">
-      <h1 id="greetingTitle">Hi 👋</h1>
-      <p>I have one very important question...</p>
+      <h1 id="greetingTitle">منورة</h1>
+      <p>عندي سؤال</p>
       <p style="color: #1e293b; font-weight: 500; margin-bottom: 20px;">
-        بتنزعجي لما اكتبلك؟
+        Do you feel disturbed when i text you?
       </p>
       
       <div id="choiceButtons" class="btn-group">
@@ -200,8 +205,15 @@
       const s1 = document.getElementById('screen1');
       const s2 = document.getElementById('screen2');
       
+      // Start background music gently when user taps Continue
+      const music = document.getElementById('bgMusic');
+      if (music) {
+        music.volume = 0.25;
+        music.play().catch(() => {});
+      }
+
       if (name !== "") {
-        document.getElementById('greetingTitle').innerText = `Hi, ${name} 👋`;
+        document.getElementById('greetingTitle').innerText = `منورة, ${name} 👋`;
       }
 
       s1.classList.remove('active');
@@ -219,12 +231,10 @@
       const card = document.getElementById('mainCard');
 
       if (answer === 'no') {
-        // Fullscreen floral explosion
         createFullPageBurst(['🌷', '✨', '😊', '🌸', '🌷', '💖', '🌼']);
         card.classList.add('bounce');
         setTimeout(() => card.classList.remove('bounce'), 400);
       } else {
-        // Fullscreen rain / tear explosion
         createFullPageBurst(['😿', '💧', '🌧️', '🥺', '💧', '😿']);
         card.classList.add('shake');
         setTimeout(() => card.classList.remove('shake'), 400);
@@ -234,28 +244,23 @@
       resultArea.style.display = 'block';
 
       if (answer === 'yes') {
-        resultText.innerText = "ححاول ما اكتبلك لكن";
+        resultText.innerText = "ححاول ما اكتبلك لكن، بس مو اكيد";
       } else {
         resultText.innerText = "الحمدلله، اسعدتيني والله 🌷";
       }
     }
 
-    // Generates 25 particles scattered across the entire mobile screen width & height
     function createFullPageBurst(emojiList) {
       for (let i = 0; i < 25; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
         particle.innerText = emojiList[Math.floor(Math.random() * emojiList.length)];
         
-        // Random horizontal position across 100% of the screen
         const randomX = Math.random() * (window.innerWidth - 40);
-        // Random vertical starting area near the lower-middle of screen
         const randomY = (window.innerHeight * 0.4) + (Math.random() * (window.innerHeight * 0.4));
         
         particle.style.left = randomX + 'px';
         particle.style.top = randomY + 'px';
-        
-        // Stagger animation timing slightly for a natural rain/explosion effect
         particle.style.animationDelay = (Math.random() * 0.3) + 's';
         
         document.body.appendChild(particle);
