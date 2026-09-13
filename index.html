@@ -100,15 +100,34 @@
     .btn-group {
       display: flex;
       gap: 12px;
+      align-items: center;
     }
 
-    .btn-secondary {
-      background-color: #f1f5f9;
-      color: #334155;
+    /* Custom Pink 'No' Button */
+    .btn-pink {
+      background-color: #ec4899;
+      color: #ffffff;
+      flex: 2;
+      font-size: 18px;
+      font-weight: 600;
     }
 
-    .btn-secondary:active {
-      background-color: #e2e8f0;
+    .btn-pink:active {
+      background-color: #db2777;
+    }
+
+    /* Custom Small Black 'Yes' Button */
+    .btn-black-small {
+      background-color: #334155;
+      color: #ffffff;
+      flex: 1;
+      padding: 10px 12px;
+      font-size: 13px;
+      opacity: 0.85;
+    }
+
+    .btn-black-small:active {
+      background-color: #1e293b;
     }
 
     .result-text {
@@ -166,7 +185,7 @@
 </head>
 <body>
 
-  <!-- Optional Background Audio Element -->
+  <!-- Background Audio -->
   <audio id="bgMusic" loop preload="auto">
     <source src="https://assets.mixkit.co/music/preview/mixkit-a-very-happy-gospel-116.mp3" type="audio/mpeg" />
   </audio>
@@ -189,8 +208,8 @@
       </p>
       
       <div id="choiceButtons" class="btn-group">
-        <button class="btn" onclick="handleChoice('yes')">Yes</button>
-        <button class="btn btn-secondary" onclick="handleChoice('no')">No</button>
+        <button class="btn btn-pink" onclick="handleChoice('no')">No</button>
+        <button class="btn btn-black-small" onclick="handleChoice('yes')">Yes</button>
       </div>
 
       <div id="resultArea" style="display: none;">
@@ -205,7 +224,6 @@
       const s1 = document.getElementById('screen1');
       const s2 = document.getElementById('screen2');
       
-      // Start background music gently when user taps Continue
       const music = document.getElementById('bgMusic');
       if (music) {
         music.volume = 0.25;
