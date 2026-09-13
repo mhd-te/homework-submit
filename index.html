@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Just a Question</title>
+  <title>سؤال صغير</title>
   <style>
     * {
       box-sizing: border-box;
@@ -207,20 +207,23 @@
       <h1>اهلين 👋</h1>
       <p>شو اسمك؟</p>
       <input type="text" id="nameInput" placeholder="كتبيه هون شطورة" autocomplete="off" />
-      <button class="btn" onclick="goToScreen2()">Continue</button>
+      <button class="btn" onclick="goToScreen2()">متابعة</button>
     </div>
 
     <!-- SCREEN 2 -->
     <div id="screen2" class="screen">
       <h1 id="greetingTitle">منورة</h1>
       <p>عندي سؤال</p>
-      <p style="color: #1e293b; font-weight: 500; margin-bottom: 20px;">
-        Do you feel disturbed when i text you?
+      <p style="color: #1e293b; font-weight: 600; margin-bottom: 6px; font-size: 17px;">
+        بتتدايقي او بتنزعجي لما اكتبلك؟
+      </p>
+      <p style="color: #64748b; font-size: 14px; margin-bottom: 20px;">
+        جاوبي بصراحة عادي
       </p>
       
       <div id="choiceButtons" class="btn-group">
-        <button class="btn-pink" style="background-color: #ec4899; color: #ffffff;" onclick="handleChoice('no')">No</button>
-        <button class="btn-black-small" style="background-color: #1e293b; color: #ffffff; font-size: 12px;" onclick="handleChoice('yes')">Yes</button>
+        <button class="btn-pink" style="background-color: #ec4899; color: #ffffff;" onclick="handleChoice('no')">لا</button>
+        <button class="btn-black-small" style="background-color: #1e293b; color: #ffffff; font-size: 12px;" onclick="handleChoice('yes')">اي</button>
       </div>
 
       <div id="resultArea" style="display: none;">
