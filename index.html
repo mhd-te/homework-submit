@@ -103,42 +103,42 @@
       align-items: center;
     }
 
-    /* Custom Pink 'No' Button */
+    /* Custom Pink 'No' Button Override */
     .btn-pink {
-      background-color: #ec4899;
-      color: #ffffff;
-      flex: 2;
-      font-size: 18px;
-      font-weight: 600;
-      padding: 14px 20px;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
+      background-color: #ec4899 !important;
+      color: #ffffff !important;
+      flex: 2 !important;
+      font-size: 18px !important;
+      font-weight: 600 !important;
+      padding: 14px 20px !important;
+      border: none !important;
+      border-radius: 12px !important;
+      cursor: pointer !important;
+      transition: background-color 0.2s, transform 0.1s !important;
     }
 
     .btn-pink:active {
-      background-color: #db2777;
-      transform: scale(0.98);
+      background-color: #db2777 !important;
+      transform: scale(0.98) !important;
     }
 
-    /* Custom Small Black 'Yes' Button */
+    /* Custom Small Black 'Yes' Button Override */
     .btn-black-small {
-      background-color: #334155;
-      color: #ffffff;
-      flex: 1;
-      padding: 10px 12px;
-      font-size: 13px;
-      opacity: 0.85;
-      border: none;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
+      background-color: #1e293b !important;
+      color: #ffffff !important;
+      flex: 1 !important;
+      padding: 8px 10px !important;
+      font-size: 12px !important;
+      border: none !important;
+      border-radius: 12px !important;
+      cursor: pointer !important;
+      opacity: 0.85 !important;
+      transition: background-color 0.2s, transform 0.1s !important;
     }
 
     .btn-black-small:active {
-      background-color: #1e293b;
-      transform: scale(0.98);
+      background-color: #0f172a !important;
+      transform: scale(0.98) !important;
     }
 
     .result-text {
@@ -219,8 +219,8 @@
       </p>
       
       <div id="choiceButtons" class="btn-group">
-        <button class="btn-pink" onclick="handleChoice('no')">No</button>
-        <button class="btn-black-small" onclick="handleChoice('yes')">Yes</button>
+        <button class="btn-pink" style="background-color: #ec4899; color: #ffffff;" onclick="handleChoice('no')">No</button>
+        <button class="btn-black-small" style="background-color: #1e293b; color: #ffffff; font-size: 12px;" onclick="handleChoice('yes')">Yes</button>
       </div>
 
       <div id="resultArea" style="display: none;">
